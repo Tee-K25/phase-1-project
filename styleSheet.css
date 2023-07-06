@@ -1,0 +1,116 @@
+#my_content {
+  float: left;
+  height: 280px;
+  width: 25%;
+  border: solid gray 1px;
+  margin: 1px;
+  background-color: rgba(0, 0, 0, 0.822);
+}
+#main_feed {
+  float: left;
+  height: 280px;
+  width: 27%;
+  border: solid gray 1px;
+  margin: 1px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.822);
+}
+#vocab_entry {
+  float: left;
+  height: 280px;
+  width: 32%;
+  border: solid gray 1px;
+  margin: 1px;
+  background-color: rgba(0, 0, 0, 0.822);
+}
+#new_input {
+  float: right;
+  height: 50px;
+  width: 14%;
+  border: solid gray 1px;
+  margin: 1px;
+  margin-right: 3px;
+}
+.content_list {
+  color: white;
+  text-align: center;
+}
+.book_title {
+  text-align: center;
+  color: white;
+}
+#search {
+  text-align: center;
+}
+.add_note {
+  display: block;
+  margin-left: 67%;
+  margin-top: 3px;
+}
+#search_output {
+  border: dotted 1px;
+  border-radius: 4px;
+  height: 30px;
+  width: 90%;
+  text-align: center;
+  margin-left: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#bookmark {
+  margin-top: 3px;
+}
+#save_btn {
+  float: right;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+#new_input_btn {
+  height: 100%;
+  width: 100%;
+}
+.main_btns_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 7px;
+}
+#feed_btns {
+  margin-top: 23px;
+  margin-left: 60px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+}
+#title_label {
+  display: block;
+}
+#display {
+  bottom: 2px;
+  margin-top: 0px;
+}
+#word_meaning {
+  max-height: 100px;
+  overflow: auto;
+  border: solid 1px gray;
+  border-radius: 3px;
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: beige;
+}
+#label_partOfSpeech {
+  margin-top: 0px;
+  color: chartreuse;
+}
+#label_meaning {
+  margin: 0px;
+  color: chartreuse;
+}
+#header {
+  text-align: center;
+}
+#search_output_heading {
+  color: white;
+}
+#part_of_speech {
+  color: beige;
+}
