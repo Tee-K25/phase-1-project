@@ -1,0 +1,11 @@
+{
+  "name": "vocabulary-decoded",
+  "homepage": "https://github.com/Tee-K25/phase-1-project/",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
