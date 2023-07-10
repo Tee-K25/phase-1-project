@@ -1,15 +1,15 @@
 ## VOCAB DECODEd
 
-VOCAB DECODEd is a vocabulary management and dictionary application. It provides a user-friendly interface for organizing books, searching for word definitions, and keeping track of vocabularies associated with each book.
+VOCAB DECODEd is a vocabulary management and dictionary application. It provides a user-friendly interface for organizing books, searching for word definitions, and keeping track of vocabulary associated with each book.
 
 ### Features
 
 - **Book Management**: Users can add books to their library by entering the book title. The added books are displayed under the "My Books" section.
 - **Book Selection**: Clicking on a book title selects it and displays the selected book's title under the "The book's title" section.
 - **Word Search**: Users can search for word definitions by entering a word in the search input field and clicking the "Submit" button.
-- **Dictionary Integration**: The application utilizes the dictionary API to fetch word definitions and part of speech information.
+- **Dictionary Integration**: The application utilizes the dictionary API to fetch word definitions and part-of-speech information.
 - **Display of Word Information**: The retrieved word's definition and part of speech are displayed under the "The word" section.
-- **Vocabulary List**: The app maintains a vocabulary list associated with each book, allowing users to track their learned vocabularies.
+- **Vocabulary List**: The app maintains a vocabulary list associated with each book, allowing users to track their learned vocabulary.
 - **Vocabulary Addition**: When a word is searched, its definition is added to the vocabulary list for the currently selected book.
 - **Interactive Vocabulary Search**: Clicking on a vocabulary in the list triggers another search for that word, displaying its definition.
 
@@ -25,7 +25,7 @@ VOCAB DECODEd is a vocabulary management and dictionary application. It provides
 
    - Click on a book title from the "My Books" list.
    - The selected book's title will be displayed under the "The book's title" section.
-   - The associated vocabulary list will be shown in the "Vocabularies" section.(Not functioning since there's no storage system)
+   - The associated vocabulary list will be shown in the "Vocabularies" section. (Not functioning since there's no storage system)
 
 3. Searching for Word Definitions:
 
