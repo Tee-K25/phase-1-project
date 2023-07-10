@@ -101,6 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //add event listener to books
         liBookTitles.addEventListener("click", (e) => {
+          let ulOldVocab = document.querySelector("#vocabulary_list");
+          let oldPartOfSpeechDom = document.querySelector("#part_of_speech");
+          oldPartOfSpeechDom.textContent = "";
+          let oldMeaningDom = document.querySelector("#word_meaning");
+          oldMeaningDom.textContent = "";
+
+          ulOldVocab.innerHTML = "";
+
           let clickedTag = e.target;
           let theActualBook = clickedTag.textContent;
           console.log(theActualBook);
