@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let submitForm = document.querySelector("#search_form");
 
-  //cannot submit if library is empty
+  //Submitting the word
   submitForm.addEventListener("submit", (e) => {
     e.preventDefault();
     let wordSearched = e.target.search_tab.value;
@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function vocabularyList() {
       let vocabArray = [];
       vocabArray.push(word);
+      //can't search without a book specified
       let newInputAdded = searchOutputBookTitle.textContent;
       if (newInputAdded === "The book's title") {
         alert("Please add a book first");
