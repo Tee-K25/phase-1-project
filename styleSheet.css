@@ -32,12 +32,12 @@
   margin-right: 3px;
 }
 .content_list {
-  color: white;
+  color: crimson;
   text-align: center;
 }
 .book_title {
   text-align: center;
-  color: white;
+  color: crimson;
 }
 #search {
   text-align: center;
@@ -68,6 +68,7 @@
 #new_input_btn {
   height: 100%;
   width: 100%;
+  background-color: crimson;
 }
 .main_btns_div {
   display: flex;
@@ -107,10 +108,15 @@
 }
 #header {
   text-align: center;
+  background-color: crimson;
+  padding: 8px;
 }
 #search_output_heading {
-  color: white;
+  color: crimson;
 }
 #part_of_speech {
   color: beige;
+}
+#vocabDecoded {
+  text-decoration: underline;
 }
