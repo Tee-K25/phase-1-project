@@ -70,10 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
       }
+      //the second bit
     }
     vocabularyList();
   });
-  // add new input
+  //function to add new input
   let newInputBtn = document.querySelector("#new_input_btn");
   newInputBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -97,15 +98,28 @@ document.addEventListener("DOMContentLoaded", () => {
         let libraryUl = document.querySelector("#my_books");
         let liBookTitles = document.createElement("li");
         liBookTitles.className = "my_books";
-        liBookTitles.textContent = bookTitle;
+        liBookTitles.textContent = book;
 
         //add event listener to books
         liBookTitles.addEventListener("click", (e) => {
-          let clickedTag = e.target;
-          let theActualBook = clickedTag.textContent;
-          console.log(theActualBook);
-          let searchOutputBookTitle = document.querySelector(".book_title");
-          searchOutputBookTitle.textContent = theActualBook;
+          let theLi = e.target;
+          let theBook = theLi.textContent;
+          console.log(theBook);
+          let titleHeader = document.querySelector(".book_title");
+          titleHeader.textContent = bookTitle;
+
+          let ulVocab = document.querySelector("#vocabulary_list");
+          ulVocab.innerHTML = "";
+
+          libraryArray.forEach((vocab) => {
+            let liVocab = document.createElement("li");
+            liVocab.textContent = vocab;
+            liVocab.addEventListener("click", (e) => {
+              let thyWord = e.target.title.value;
+              wordSearch(thyWord);
+            });
+            ulVocab.appendChild(liVocab);
+          });
         });
 
         libraryUl.appendChild(liBookTitles);
