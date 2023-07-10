@@ -25,7 +25,7 @@ VOCAB DECODEd is a vocabulary management and dictionary application. It provides
 
    - Click on a book title from the "My Books" list.
    - The selected book's title will be displayed under the "The book's title" section.
-   - The associated vocabulary list will be shown in the "Vocabularies" section.
+   - The associated vocabulary list will be shown in the "Vocabularies" section.(Not functioning since there's no storage system)
 
 3. Searching for Word Definitions:
 
