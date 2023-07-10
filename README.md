@@ -45,3 +45,7 @@ VOCAB DECODEd is a vocabulary management and dictionary application. It provides
 ### Credits
 
 - The application integrates with the [dictionaryapi.dev](https://dictionaryapi.dev/) for word definitions and part of speech information.
+
+## Deployment link
+
+https://main--bucolic-dusk-6e040b.netlify.app/
