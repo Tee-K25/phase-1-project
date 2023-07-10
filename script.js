@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let word = wordSearched;
 
     wordSearch(word);
-
+    //function to search word
     function wordSearch(word) {
       fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then((response) => response.json())
@@ -38,32 +38,41 @@ document.addEventListener("DOMContentLoaded", () => {
     searchOutputTitle.textContent = `'${word}' in ${title}`;
 
     //function to populate vocabulary list
-    let bookVocabularies = {};
+
     function vocabularyList() {
       let vocabArray = [];
       vocabArray.push(word);
-
-      let currentBookTitle = document.querySelector(".book_title").textContent;
-
-      if (!bookVocabularies[currentBookTitle]) {
-        bookVocabularies[currentBookTitle] = [];
+      let newInputAdded = searchOutputBookTitle.textContent;
+      if (newInputAdded === "The book's title") {
+        alert("Please add a book first");
+      } else {
+        let libraryList = document.querySelector(".my_books");
+        let bookTItle = libraryList.textContent;
+        if (newInputAdded === bookTItle) {
+          vocabArray.forEach((vocab) => {
+            let myVocabObject = {
+              title: bookTItle,
+              word: [vocab],
+            };
+            let liVocab = document.createElement("li");
+            liVocab.textContent = vocab;
+            let ulVocab = document.querySelector("#vocabulary_list");
+            ulVocab.appendChild(liVocab);
+            liVocab.addEventListener("click", () => {
+              let searchOutputTitle = document.querySelector(
+                "#search_output_heading"
+              );
+              searchOutputTitle.textContent = `'${myVocabObject.word}' in ${myVocabObject.title}`;
+              searchOutputBookTitle.textContent = myVocabObject.title;
+              let selectedWord = myVocabObject.word;
+              wordSearch(selectedWord);
+            });
+          });
+        }
       }
-
-      vocabArray.forEach((vocab) => {
-        bookVocabularies[currentBookTitle].push(vocab);
-        let liVocab = document.createElement("li");
-        liVocab.textContent = vocab;
-        liVocab.addEventListener("click", (e) => {
-          let thyWord = e.target.title.value;
-          wordSearch(thyWord);
-        });
-        let ulVocab = document.querySelector("#vocabulary_list");
-        ulVocab.appendChild(liVocab);
-      });
+      //the second bit
     }
-
     vocabularyList();
-    //attaching vocab to book
   });
   //function to add new input
   let newInputBtn = document.querySelector("#new_input_btn");
@@ -88,27 +97,29 @@ document.addEventListener("DOMContentLoaded", () => {
       libraryArray.forEach((book) => {
         let libraryUl = document.querySelector("#my_books");
         let liBookTitles = document.createElement("li");
+        liBookTitles.className = "my_books";
         liBookTitles.textContent = book;
 
         //add event listener to books
-        liBookTitles.addEventListener("click", () => {
+        liBookTitles.addEventListener("click", (e) => {
+          let theLi = e.target;
+          let theBook = theLi.textContent;
+          console.log(theBook);
           let titleHeader = document.querySelector(".book_title");
           titleHeader.textContent = bookTitle;
 
           let ulVocab = document.querySelector("#vocabulary_list");
           ulVocab.innerHTML = "";
 
-          if (bookVocabularies[bookTitle]) {
-            bookVocabularies[bookTitle].forEach((vocab) => {
-              let liVocab = document.createElement("li");
-              liVocab.textContent = vocab;
-              liVocab.addEventListener("click", (e) => {
-                let thyWord = e.target.title.value;
-                wordSearch(thyWord);
-              });
-              ulVocab.appendChild(liVocab);
+          libraryArray.forEach((vocab) => {
+            let liVocab = document.createElement("li");
+            liVocab.textContent = vocab;
+            liVocab.addEventListener("click", (e) => {
+              let thyWord = e.target.title.value;
+              wordSearch(thyWord);
             });
-          }
+            ulVocab.appendChild(liVocab);
+          });
         });
 
         libraryUl.appendChild(liBookTitles);
